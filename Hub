@@ -338,3 +338,7 @@ end)
 tab.newButton("Enable floor 0 (Backdoor)", "Get floor 0 without the badge", function()
 CustomModifiers:EnableFloor("Backdoor", true)
 end)
+
+tab.newButton("Mischievous crucifix (hold Q and click smth)", "Get mischievous crucifix (works any game!", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/kyhXm0wR"))()
+end)
