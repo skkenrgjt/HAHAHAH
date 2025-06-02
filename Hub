@@ -343,6 +343,14 @@ tab.newButton("Mischievous crucifix (hold Q and click smth)", "Get mischievous c
 loadstring(game:HttpGet("https://pastebin.com/raw/kyhXm0wR"))()
 end)
 
+tab.newButton("mischievous candle", "", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/TjibNZh2"))()
+end)
+
+tab.newButton("Curious candle", "(i was lazy finding the new one", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/ghdXA9QK"))()
+end)
+
 tab.newButton("Keyboard script for mobile users!", "Keyboard", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
