@@ -3,7 +3,7 @@ local LocalPlayer = Players.LocalPlayer
 
 local AllowedUsers = {
     "quentin_roblox1234",
-    "more user?"
+    "Vuticlk"
 }
 
 local function IsAllowedUser(user)
