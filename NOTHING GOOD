@@ -1,0 +1,22 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local AllowedUsers = {
+    "quentin_roblox1234",
+    "more user?"
+}
+
+local function IsAllowedUser(user)
+    for _, name in pairs(AllowedUsers) do
+        if user == name then
+            return true
+        end
+    end
+    return false
+end
+
+if not IsAllowedUser(LocalPlayer.Name) then
+    game.Players.LocalPlayer:Ban("Amogus is here?")
+    return
+end
+
