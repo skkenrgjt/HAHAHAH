@@ -1,0 +1,1337 @@
+
+
+-- Here The Discontinued Gabriel Script 
+-- 75% AI made 25% made by me
+
+
+
+
+
+sound = Instance.new("Sound")
+writefile("GabrielTheme.mp3", game:HttpGet("https://github.com/InnocentViru/Test-music-/raw/refs/heads/main/VN20250910_162546.mp3"))
+sound.SoundId = getcustomasset("GabrielTheme.mp3")
+sound.Volume = 2
+sound.Looped = true
+sound.Parent = game.Players.LocalPlayer.Character
+sound:Play()
+
+
+
+local Lighting = game:GetService("Lighting")
+
+Lighting.FogStart = 80
+Lighting.FogEnd = 140
+Lighting.FogColor = Color3.fromRGB(0, 0, 0)
+
+
+
+
+
+sound1 = Instance.new("Sound")
+writefile("GabrielLine.mp3", game:HttpGet("https://github.com/InnocentViru/Test-music-/raw/refs/heads/main/gabriel-ultrakill-voiceline-behold-made-with-Voicemod.mp3"))
+sound1.SoundId = getcustomasset("GabrielLine.mp3")
+sound1.Volume = 2
+sound1.Looped = false
+sound1.Parent = game.Players.LocalPlayer.Character
+sound1:Play()
+
+
+local TextChatService = cloneref(game:GetService("TextChatService"))
+local isLegacyChat = TextChatService.ChatVersion == Enum.ChatVersion.LegacyChatService
+local function SendMessage(message)
+    message = tostring(message)
+
+    if not isLegacyChat then
+        TextChatService.TextChannels.RBXGeneral:SendAsync(message)
+    else
+        ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
+    end
+end
+
+SendMessage("BEHOLD!")
+
+
+
+
+
+
+
+
+
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationF = Instance.new("Animation")
+animationF.AnimationId = "rbxassetid://16570309579"
+
+-- Load the animation
+local animationTrackF = animator:LoadAnimation(animationF)
+
+-- Play the animation
+animationTrackF:Play()
+
+local Lighting = game:GetService("Lighting")
+
+Lighting.ClockTime = 22
+
+
+
+local Troot = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+Troot.CFrame = CFrame.new(0.39695337414741516, 21.138416290283203, 1.8349571228027344)
+
+
+
+
+wait(0.1)
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- To freeze the character:
+humanoidRootPart.Anchored = true
+
+-- To unfreeze the character:
+-- humanoidRootPart.Anchored = false
+
+
+
+
+local duration = 2.7
+local startTime = tick()
+
+task.spawn(function()
+while tick() - startTime < duration do
+	game:GetService("ReplicatedStorage").Prop:FireServer()
+
+local args = {
+    [1] = "CollectQuestItem",
+    [2] = game:GetService("Players").LocalPlayer.Character.Torso
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PlaySoundRemote"):InvokeServer(unpack(args))
+
+
+
+	task.wait(0.01) -- Waits for 0.5 seconds before the next iteration
+end
+
+
+local args = {
+    [1] = "Bomb"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RetroAbility"):FireServer(unpack(args))
+
+
+
+end)
+
+
+
+
+
+
+local ePart = Instance.new("Part")
+
+ePart.Name = "effectPart"
+ePart.Parent = workspace
+
+ePart.Color = Color3.new(1, 1, 0)
+ePart.Size = Vector3.new(20, 1000, 20)
+ePart.Transparency = 0.1
+ePart.Anchored = true
+ePart.Massless = true
+ePart.CanCollide = false
+ePart.Material = Enum.Material.Neon
+
+
+
+
+local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+
+ePart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 0)
+
+
+
+
+
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create highlight
+local highlight = Instance.new("Highlight")
+highlight.Parent = character -- must be a Model (the whole character)
+
+-- Customize
+highlight.FillColor = Color3.fromRGB(0, 0, 0) 
+highlight.OutlineColor = Color3.fromRGB(0, 0, 0)
+highlight.FillTransparency = 0
+highlight.OutlineTransparency = 0
+
+
+
+wait(1.50)
+
+local isLegacyChat = TextChatService.ChatVersion == Enum.ChatVersion.LegacyChatService
+local function SendMessage(message)
+    message = tostring(message)
+
+    if not isLegacyChat then
+        TextChatService.TextChannels.RBXGeneral:SendAsync(message)
+    else
+        ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
+    end
+end
+
+SendMessage("THE POWER OF AN ANGEL!")
+
+
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationS = Instance.new("Animation")
+animationS.AnimationId = "rbxassetid://117174405466885"
+
+-- Load the animation
+local animationTrackS = animator:LoadAnimation(animationS)
+
+-- Play the animation
+animationTrackS:Play()
+animationTrackS:AdjustSpeed(0.25)
+
+
+
+
+
+wait(1.1)
+
+soundL = Instance.new("Sound")
+writefile("VirtueDeath.mp3", game:HttpGet("https://github.com/InnocentViru/Test-music-/raw/refs/heads/main/ultrakill-viture-death-made-with-Voicemod.mp3"))
+soundL.SoundId = getcustomasset("VirtueDeath.mp3")
+soundL.Volume = 2
+soundL.Looped = false
+soundL.Parent = game.Players.LocalPlayer.Character
+soundL:Play()
+
+
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Linked Sword asset ID
+local swordAssetId = 125013769
+local swordOriginal = game:GetObjects("rbxassetid://" .. swordAssetId)[1]
+
+-- Function to prepare sword (remove Tool behavior, disable collisions, recolor, glow)
+local function prepareSword(sword, color)
+    if sword:IsA("Tool") then
+        local model = Instance.new("Model")
+        model.Name = "LinkedSwordModel"
+        for _, child in ipairs(sword:GetChildren()) do
+            child.Parent = model
+        end
+        sword:Destroy()
+        sword = model
+    end
+
+    for _, part in ipairs(sword:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.CanCollide = false
+            part.Massless = true
+            part.Color = color
+            part.Material = Enum.Material.Neon -- ✨ makes sword glow
+
+            -- If sword has a SpecialMesh, recolor it too
+            local mesh = part:FindFirstChildOfClass("SpecialMesh")
+            if mesh then
+                mesh.VertexColor = Vector3.new(color.R, color.G, color.B)
+            end
+        end
+    end
+
+    sword.Parent = character
+    return sword
+end
+
+-- === LEFT HAND SWORD (BLUE NEON) ===
+if swordOriginal then
+    local swordLeft = prepareSword(swordOriginal, Color3.fromRGB(0, 170, 255)) -- Blue sword
+    local leftHand = character:FindFirstChild("LeftHand") or character:FindFirstChild("Left Arm")
+    local handle = swordLeft:FindFirstChild("Handle")
+
+    if leftHand and handle then
+        handle.CFrame = leftHand.CFrame * CFrame.new(0, -1, -2) * CFrame.Angles(math.rad(-175), 0, 0)
+
+        local weld = Instance.new("Weld")
+        weld.Part0 = leftHand
+        weld.Part1 = handle
+        weld.C0 = leftHand.CFrame:toObjectSpace(handle.CFrame)
+        weld.Parent = handle
+    end
+end
+
+-- === RIGHT HAND SWORD (YELLOW NEON) ===
+local swordRight = game:GetObjects("rbxassetid://" .. swordAssetId)[1]
+if swordRight then
+    local swordRightPrepared = prepareSword(swordRight, Color3.fromRGB(255, 255, 0)) -- Yellow sword
+    local rightHand = character:FindFirstChild("RightHand") or character:FindFirstChild("Right Arm")
+    local handle = swordRightPrepared:FindFirstChild("Handle")
+
+    if rightHand and handle then
+        handle.CFrame = rightHand.CFrame * CFrame.new(0, -1, -2) * CFrame.Angles(math.rad(-175), 0, 0)
+
+        local weld = Instance.new("Weld")
+        weld.Part0 = rightHand
+        weld.Part1 = handle
+        weld.C0 = rightHand.CFrame:toObjectSpace(handle.CFrame)
+        weld.Parent = handle
+    end
+end
+
+
+local exPart = Instance.new("Part")
+
+exPart.Name = "TestPart"
+exPart.Parent = workspace
+
+exPart.Color = Color3.new(1, 1, 0)
+exPart.Size = Vector3.new(1, 1, 1)
+exPart.Transparency = 0.5
+exPart.Anchored = true
+exPart.Massless = true
+exPart.CanCollide = false
+exPart.Material = Enum.Material.Neon
+exPart.Shape = Enum.PartType.Ball
+
+local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+exPart.CFrame = humanoidRootPart.CFrame
+
+local TweenService = game:GetService("TweenService")
+
+local goal = {
+    Size = Vector3.new(50, 50, 50),
+    Transparency = 1
+}
+
+local tweenInfo = TweenInfo.new(
+    1, -- Duração
+    Enum.EasingStyle.Quad,
+    Enum.EasingDirection.Out,
+    0, -- 0 = toca apenas uma vez
+    false,
+    0
+)
+
+local tween1 = TweenService:Create(exPart, tweenInfo, goal)
+
+-- Função para resetar e rodar de novo
+local function playTween()
+    exPart.Size = Vector3.new(1, 1, 1)
+    exPart.Transparency = 0.1
+    tween1:Play()
+end
+
+-- Teste: roda 2 vezes com intervalo de 3 segundos
+playTween()
+
+tween1.Completed:Connect(function()
+
+exPart:Destroy()
+
+end)
+
+
+
+ePart:Destroy()
+highlight:Destroy()
+
+-- Trail
+
+local TweenService = game:GetService("TweenService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Função que cria uma bola
+local function createBall()
+    local ball = Instance.new("Part")
+    ball.Shape = Enum.PartType.Ball
+    ball.Size = Vector3.new(1, 1, 1)
+    ball.Material = Enum.Material.Neon
+    ball.Color = Color3.fromRGB(255, 255, 0) -- amarelo
+    ball.Anchored = true
+    ball.CanCollide = false
+    ball.CFrame = humanoidRootPart.CFrame
+    ball.Parent = workspace
+
+    -- Criar attachments para o Trail
+    local att0 = Instance.new("Attachment", ball)
+    att0.Position = Vector3.new(0, -0.5, 0) -- embaixo
+    local att1 = Instance.new("Attachment", ball)
+    att1.Position = Vector3.new(0, 0.5, 0) -- em cima
+
+    -- Criar o Trail
+    local trail = Instance.new("Trail")
+    trail.Attachment0 = att0
+    trail.Attachment1 = att1
+    trail.Parent = ball
+    trail.FaceCamera = true
+    trail.Lifetime = 0.5
+    trail.LightEmission = 1
+    trail.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, ball.Color),
+        ColorSequenceKeypoint.new(1, Color3.new(1,1,1)) -- vai esbranquiçando
+    }
+    trail.Transparency = NumberSequence.new{
+        NumberSequenceKeypoint.new(0, 0),
+        NumberSequenceKeypoint.new(1, 1) -- some no final
+    }
+
+    -- Direção aleatória
+    local randomDirection = Vector3.new(
+        math.random(-20, 20),  
+        math.random(-30, 30),  
+        math.random(-20, 20)   
+    )
+
+    -- Objetivo do tween
+    local goal = {
+        Position = humanoidRootPart.Position + randomDirection,
+        Size = Vector3.new(3, 3, 3),
+        Transparency = 1
+    }
+
+    local tweenInfo = TweenInfo.new(
+        2,
+        Enum.EasingStyle.Quad,
+        Enum.EasingDirection.Out
+    )
+
+    local tween = TweenService:Create(ball, tweenInfo, goal)
+
+    tween.Completed:Connect(function()
+        ball:Destroy()
+    end)
+
+    tween:Play()
+end
+
+-- Criar entre 10 e 20 bolinhas
+local amount = math.random(10, 40)
+for i = 1, amount do
+    createBall()
+
+end
+
+
+local Lighting = game:GetService("Lighting")
+
+Lighting.ClockTime = 14
+
+
+
+local Lighting = game:GetService("Lighting")
+
+Lighting.FogStart = math.huge
+Lighting.FogEnd = math.huge
+Lighting.FogColor = Color3.fromRGB(100, 100, 100)
+
+
+
+
+wait(2)
+
+animationTrackS:Stop()
+
+
+humanoidRootPart.Anchored = false
+
+
+
+
+
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local root = character:WaitForChild("HumanoidRootPart")
+
+local params = RaycastParams.new()
+params.FilterDescendantsInstances = {character}
+params.FilterType = Enum.RaycastFilterType.Blacklist
+
+local result = workspace:Raycast(root.Position, Vector3.new(0, -500, 0), params)
+
+if result then
+    root.CFrame = CFrame.new(result.Position + Vector3.new(0, 3, 0))
+end
+
+animationTrackF:Stop()
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationW = Instance.new("Animation")
+animationW.AnimationId = "rbxassetid://17737989045"
+
+-- Load the animation
+local animationTrackW = animator:LoadAnimation(animationW)
+
+-- Play the animation
+animationTrackW:Play()
+
+
+soundgroundSlam = Instance.new("Sound")
+writefile("GroundSlam.mp3", game:HttpGet("https://github.com/InnocentViru/Test-music-/raw/refs/heads/main/ultrakill-ground-slam-made-with-Voicemod.mp3"))
+soundgroundSlam.SoundId = getcustomasset("GroundSlam.mp3")
+soundgroundSlam.Volume = 2
+soundgroundSlam.Looped = false
+soundgroundSlam.Parent = game.Players.LocalPlayer.Character
+soundgroundSlam:Play()
+
+
+
+
+
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Create highlight
+local highlight2 = Instance.new("Highlight")
+highlight2.Parent = character -- must be a Model (the whole character)
+
+-- Customize
+highlight2.FillColor = Color3.fromRGB(255, 255, 255) 
+highlight2.OutlineColor = Color3.fromRGB(255, 255, 255)
+highlight2.FillTransparency = 1
+highlight2.OutlineTransparency = 0
+
+
+
+-- -- -- --
+
+
+
+
+local gabrielGui = Instance.new("ScreenGui")
+gabrielGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+gabrielGui.Name = "GabrielGui"
+
+local gFrame = Instance.new("Frame")
+gFrame.Name = "GabrielFrame"
+gFrame.Parent = gabrielGui
+
+gFrame.Size = UDim2.new(0, 350, 0, 275)
+gFrame.BackgroundColor3 = Color3.new(1, 1, 0)
+gFrame.BorderColor3 = Color3.new(0, 0, 255)
+gFrame.Position = UDim2.new(0.25, 0, 0.1)
+
+
+
+gUiCorner = Instance.new("UICorner")
+gUiCorner.CornerRadius = UDim.new(0, 50)
+gUiCorner.Parent = gFrame
+
+gUIStroke = Instance.new("UIStroke")
+
+gUIStroke.Thickness = 5
+gUIStroke.Parent = gFrame
+gUIStroke.Color = Color3.new(0, 0, 1)
+
+local gDrag = Instance.new("UIDragDetector")
+
+gDrag.Parent = gFrame
+
+
+local title = Instance.new("TextLabel")
+
+title.Name = "Title"
+title.Parent = gFrame
+
+title.Text = "Gabriel Moveset Version 0.1"
+title.Size = UDim2.new(0, 275,  0, 40)
+title.TextColor3 = Color3.new(1, 1, 0)
+title.Position = UDim2.new(0, 40, 0, 25)
+title.BackgroundColor3 = Color3.new(0, 0, 1)
+title.Font = Enum.Font.Arcade
+title.TextScaled = true
+
+local textCorner = Instance.new("UICorner")
+
+textCorner.CornerRadius = UDim.new(0, 50)
+textCorner.Parent = title
+
+-- Buttons -- -- -- -- -- -- --
+
+local attack1 = Instance.new("TextButton") 
+
+attack1.Name = "attackNumberOne"
+attack1.Parent = gFrame
+
+attack1.Text = "Holy Slash"
+attack1.Size = UDim2.new(0, 90,  0, 50)
+attack1.TextColor3 = Color3.new(1, 1, 0)
+attack1.Position = UDim2.new(0, 105, 0, 100)
+attack1.BackgroundColor3 = Color3.new(0, 0, 1)
+attack1.Font = Enum.Font.Arcade
+attack1.TextScaled = true
+
+local attackCorner = Instance.new("UICorner")
+
+attackCorner.CornerRadius = UDim.new(0, 50)
+attackCorner.Parent = attack1
+
+
+local isPressed = false
+
+
+attack1.MouseButton1Click:Connect(function()
+
+if isPressed then
+return
+end
+
+
+
+isPressed = true
+
+
+
+
+game:GetService("ReplicatedStorage").Prop:FireServer()
+
+local args = {
+    [1] = "CollectQuestItem",
+    [2] = game:GetService("Players").LocalPlayer.Character.Torso
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PlaySoundRemote"):InvokeServer(unpack(args))
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationA1 = Instance.new("Animation")
+animationA1.AnimationId = "rbxassetid://75735749980204"
+
+-- Load the animation
+local animationTrackA1 = animator:LoadAnimation(animationA1)
+
+-- Play the animation
+animationTrackA1:Play()
+animationTrackA1:AdjustSpeed(0.90)
+
+wait(0.35)
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Distance forward in studs
+local distance = 60
+
+-- Teleport function
+local function teleportForward()
+    -- Look direction
+    local lookVector = hrp.CFrame.LookVector
+    -- New position in front
+    local newPosition = hrp.Position + (lookVector * distance)
+    -- Move character
+    hrp.CFrame = CFrame.new(newPosition, newPosition + lookVector)
+end
+
+-- Example: teleport instantly when script runs
+teleportForward()
+
+
+
+local args = {
+    [1] = "runeffect"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+
+local args = {
+    [1] = "fullcharged"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+
+local args = {
+    [1] = "dash"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+local args = {
+    [1] = "cancelrun"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+
+local args = {
+    [1] = "dash"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+
+
+
+game:GetService("ReplicatedStorage").Prop:FireServer()
+
+local args = {
+    [1] = "CollectQuestItem",
+    [2] = game:GetService("Players").LocalPlayer.Character.Torso
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PlaySoundRemote"):InvokeServer(unpack(args))
+
+
+
+animationTrackA1.TimePosition = 0.75
+
+
+wait(0.2)
+
+
+local args = {
+    [1] = "cancelrun"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("slapstick"):FireServer(unpack(args))
+
+
+
+task.wait(5)
+
+isPressed = false
+
+
+end)
+
+
+
+
+
+local attack2 = Instance.new("TextButton") 
+
+attack2.Name = "attackNumberTwo"
+attack2.Parent = gFrame
+
+attack2.Text = "Swings Of Glory"
+attack2.Size = UDim2.new(0, 90,  0, 50)
+attack2.TextColor3 = Color3.new(1, 1, 0)
+attack2.Position = UDim2.new(0, 5, 0, 175)
+attack2.BackgroundColor3 = Color3.new(0, 0, 1)
+attack2.Font = Enum.Font.Arcade
+attack2.TextScaled = true
+
+local attackCorner2 = Instance.new("UICorner")
+
+attackCorner2.CornerRadius = UDim.new(0, 50)
+attackCorner2.Parent = attack2
+
+
+local isPressed2 = false
+
+
+attack2.MouseButton1Click:Connect(function()
+
+
+if isPressed2 then
+return 
+end
+
+isPressed2 = true
+
+
+game:GetService("ReplicatedStorage").Prop:FireServer()
+
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationA2 = Instance.new("Animation")
+animationA2.AnimationId = "rbxassetid://16144838323"
+
+-- Load the animation
+local animationTrackA2 = animator:LoadAnimation(animationA2)
+
+-- Play the animation
+animationTrackA2:Play()
+animationTrackA2:AdjustSpeed(0.50)
+
+wait(2)
+
+game:GetService("ReplicatedStorage").Prop:FireServer()
+
+animationTrackA2:Stop()
+
+
+local animationA2B = Instance.new("Animation")
+animationA2B.AnimationId = "rbxassetid://135557283152371"
+
+-- Load the animation
+local animationTrackA2B = animator:LoadAnimation(animationA2B)
+
+-- Play the animation
+animationTrackA2B:Play()
+
+wait(0.50)
+
+
+
+-- LocalScript (StarterPlayerScripts ou StarterCharacterScripts)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+
+-- Espera o personagem carregar
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HRP = Character:WaitForChild("HumanoidRootPart")
+
+-- Criar a parte local
+local hitPart = Instance.new("Part")
+hitPart.Name = "LocalHitbox"
+hitPart.Size = Vector3.new(15, 15, 15) -- tamanho da hitbox
+hitPart.Transparency = 0.5
+hitPart.Anchored = false
+hitPart.CanCollide = false
+hitPart.Massless = true
+hitPart.Color = Color3.fromRGB(255, 0, 0)
+
+-- Garante que aparece junto do player
+hitPart.CFrame = HRP.CFrame
+hitPart.Parent = workspace
+
+-- Soldar a parte no HRP
+local weld = Instance.new("WeldConstraint")
+weld.Part0 = HRP
+weld.Part1 = hitPart
+weld.Parent = hitPart
+
+-- Evitar múltiplos disparos por mesmo jogador
+local touchedPlayers = {}
+
+-- Detectar toques na parte
+hitPart.Touched:Connect(function(otherPart)
+    local otherChar = otherPart:FindFirstAncestorOfClass("Model")
+    local otherHum = otherChar and otherChar:FindFirstChildOfClass("Humanoid")
+
+    if otherChar and otherHum and otherChar ~= Character then
+        local otherPlayer = Players:GetPlayerFromCharacter(otherChar)
+        if otherPlayer and not touchedPlayers[otherPlayer] then
+            touchedPlayers[otherPlayer] = true
+
+            -- Monta os args no formato pedido
+            local args = {
+                [1] = otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart")
+            }
+
+            -- Dispara para o servidor
+            ReplicatedStorage:WaitForChild("GeneralHit"):FireServer(unpack(args))
+        end
+    end
+end)
+
+
+-- Place this script in ServerScriptService
+
+local Players = game:GetService("Players")
+
+local function getClosestPlayer(targetPlayer)
+    local closestPlayer = nil
+    local shortestDistance = math.huge -- Start with a very large number
+
+    local targetCharacter = targetPlayer.Character
+    if not targetCharacter or not targetCharacter:FindFirstChild("HumanoidRootPart") then
+        return nil
+    end
+    local targetPosition = targetCharacter.HumanoidRootPart.Position
+
+    -- Loop through all players in the game
+    for _, player in ipairs(Players:GetPlayers()) do
+        -- Skip the target player themselves
+        if player ~= targetPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local distance = (player.Character.HumanoidRootPart.Position - targetPosition).Magnitude
+            
+            -- If this player is closer than the current closest one
+            if distance < shortestDistance then
+                shortestDistance = distance
+                closestPlayer = player
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+-- A function to handle the teleportation
+local function teleportPlayerToClosest(playerToTeleport)
+    local closest = getClosestPlayer(playerToTeleport)
+    
+    if closest then
+        local teleportPosition = closest.Character.HumanoidRootPart.Position + Vector3.new(0, 5, 0) -- Teleport slightly above the player
+        playerToTeleport.Character.HumanoidRootPart.CFrame = CFrame.new(teleportPosition)
+    end
+end
+
+-- A function to handle the teleportation of all players
+local function teleportAllPlayers()
+	for _, player in ipairs(Players:GetPlayers()) do
+		teleportPlayerToClosest(player)
+	end
+end
+
+-- The code below will run once as soon as the game starts and all players are ready.
+ -- This line waits for at least one player to join the game.
+task.spawn(teleportAllPlayers) -- This runs the teleportation function in a new thread, preventing the script from yielding.
+
+
+
+
+
+wait(0.50)
+
+hitPart:Destroy()
+
+
+wait(0.50)
+
+
+game:GetService("ReplicatedStorage").Prop:FireServer()
+
+
+local animationA2B = Instance.new("Animation")
+animationA2B.AnimationId = "rbxassetid://109511274923523"
+
+-- Load the animation
+local animationTrackA2B = animator:LoadAnimation(animationA2B)
+
+-- Play the animation
+animationTrackA2B:Play()
+
+
+
+
+-- LocalScript (StarterPlayerScripts ou StarterCharacterScripts)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+
+-- Espera o personagem carregar
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HRP = Character:WaitForChild("HumanoidRootPart")
+
+-- Criar a parte local
+local hitPart = Instance.new("Part")
+hitPart.Name = "LocalHitbox"
+hitPart.Size = Vector3.new(15, 15, 15) -- tamanho da hitbox
+hitPart.Transparency = 0.5
+hitPart.Anchored = false
+hitPart.CanCollide = false
+hitPart.Massless = true
+hitPart.Color = Color3.fromRGB(255, 0, 0)
+
+-- Garante que aparece junto do player
+hitPart.CFrame = HRP.CFrame
+hitPart.Parent = workspace
+
+-- Soldar a parte no HRP
+local weld = Instance.new("WeldConstraint")
+weld.Part0 = HRP
+weld.Part1 = hitPart
+weld.Parent = hitPart
+
+-- Evitar múltiplos disparos por mesmo jogador
+local touchedPlayers = {}
+
+-- Detectar toques na parte
+hitPart.Touched:Connect(function(otherPart)
+    local otherChar = otherPart:FindFirstAncestorOfClass("Model")
+    local otherHum = otherChar and otherChar:FindFirstChildOfClass("Humanoid")
+
+    if otherChar and otherHum and otherChar ~= Character then
+        local otherPlayer = Players:GetPlayerFromCharacter(otherChar)
+        if otherPlayer and not touchedPlayers[otherPlayer] then
+            touchedPlayers[otherPlayer] = true
+
+            -- Monta os args no formato pedido
+            local args = {
+                [1] = otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart")
+            }
+
+            -- Dispara para o servidor
+            ReplicatedStorage:WaitForChild("GeneralHit"):FireServer(unpack(args))
+        end
+    end
+end)
+
+
+-- Place this script in ServerScriptService
+
+local Players = game:GetService("Players")
+
+local function getClosestPlayer(targetPlayer)
+    local closestPlayer = nil
+    local shortestDistance = math.huge -- Start with a very large number
+
+    local targetCharacter = targetPlayer.Character
+    if not targetCharacter or not targetCharacter:FindFirstChild("HumanoidRootPart") then
+        return nil
+    end
+    local targetPosition = targetCharacter.HumanoidRootPart.Position
+
+    -- Loop through all players in the game
+    for _, player in ipairs(Players:GetPlayers()) do
+        -- Skip the target player themselves
+        if player ~= targetPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local distance = (player.Character.HumanoidRootPart.Position - targetPosition).Magnitude
+            
+            -- If this player is closer than the current closest one
+            if distance < shortestDistance then
+                shortestDistance = distance
+                closestPlayer = player
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+-- A function to handle the teleportation
+local function teleportPlayerToClosest(playerToTeleport)
+    local closest = getClosestPlayer(playerToTeleport)
+    
+    if closest then
+        local teleportPosition = closest.Character.HumanoidRootPart.Position + Vector3.new(0, 5, 0) -- Teleport slightly above the player
+        playerToTeleport.Character.HumanoidRootPart.CFrame = CFrame.new(teleportPosition)
+    end
+end
+
+-- A function to handle the teleportation of all players
+local function teleportAllPlayers()
+	for _, player in ipairs(Players:GetPlayers()) do
+		teleportPlayerToClosest(player)
+	end
+end
+
+-- The code below will run once as soon as the game starts and all players are ready.
+ -- This line waits for at least one player to join the game.
+task.spawn(teleportAllPlayers) -- This runs the teleportation function in a new thread, preventing the script from yielding.
+
+
+wait(0.50)
+
+hitPart:Destroy()
+
+
+
+
+task.wait(2)
+
+isPressed2 = false
+
+
+
+end)
+
+
+
+
+local attackP = Instance.new("TextButton") 
+
+attackP.Name = "attackNumberOne"
+attackP.Parent = gFrame
+
+attackP.Text = "Slash"
+attackP.Size = UDim2.new(0, 90,  0, 50)
+attackP.TextColor3 = Color3.new(1, 1, 0)
+attackP.Position = UDim2.new(0, 5, 0, 100)
+attackP.BackgroundColor3 = Color3.new(0, 0, 1)
+attackP.Font = Enum.Font.Arcade
+attackP.TextScaled = true
+
+local punchCorner = Instance.new("UICorner")
+
+punchCorner.CornerRadius = UDim.new(0, 50)
+punchCorner.Parent = attackP
+
+
+local isPunched = false
+
+
+attackP.MouseButton1Click:Connect(function()
+
+
+if isPunched then
+return
+end
+
+isPunched = true
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationA3 = Instance.new("Animation")
+animationA3.AnimationId = "rbxassetid://135557283152371"
+
+-- Load the animation
+local animationTrackA3 = animator:LoadAnimation(animationA3)
+
+-- Play the animation
+animationTrackA3:Play()
+
+
+wait(0.50)
+
+
+
+-- LocalScript (StarterPlayerScripts ou StarterCharacterScripts)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+
+-- Espera o personagem carregar
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HRP = Character:WaitForChild("HumanoidRootPart")
+
+-- Criar a parte local
+local hitPart = Instance.new("Part")
+hitPart.Name = "LocalHitbox"
+hitPart.Size = Vector3.new(15, 15, 15) -- tamanho da hitbox
+hitPart.Transparency = 0.5
+hitPart.Anchored = false
+hitPart.CanCollide = false
+hitPart.Massless = true
+hitPart.Color = Color3.fromRGB(255, 0, 0)
+
+-- Garante que aparece junto do player
+hitPart.CFrame = HRP.CFrame
+hitPart.Parent = workspace
+
+-- Soldar a parte no HRP
+local weld = Instance.new("WeldConstraint")
+weld.Part0 = HRP
+weld.Part1 = hitPart
+weld.Parent = hitPart
+
+-- Evitar múltiplos disparos por mesmo jogador
+local touchedPlayers = {}
+
+-- Detectar toques na parte
+hitPart.Touched:Connect(function(otherPart)
+    local otherChar = otherPart:FindFirstAncestorOfClass("Model")
+    local otherHum = otherChar and otherChar:FindFirstChildOfClass("Humanoid")
+
+    if otherChar and otherHum and otherChar ~= Character then
+        local otherPlayer = Players:GetPlayerFromCharacter(otherChar)
+        if otherPlayer and not touchedPlayers[otherPlayer] then
+            touchedPlayers[otherPlayer] = true
+
+            -- Monta os args no formato pedido
+            local args = {
+                [1] = otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart")
+            }
+
+            -- Dispara para o servidor
+            ReplicatedStorage:WaitForChild("GeneralHit"):FireServer(unpack(args))
+        end
+    end
+end)
+
+
+
+
+
+
+
+wait(0.50)
+
+
+hitPart:Destroy()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+task.wait(2)
+
+
+
+isPunched = false
+
+
+
+
+
+end)
+
+
+
+local attackP = Instance.new("TextButton") 
+
+attackP.Name = "attackNumberOne"
+attackP.Parent = gFrame
+
+attackP.Text = "Holy Spear"
+attackP.Size = UDim2.new(0, 90,  0, 50)
+attackP.TextColor3 = Color3.new(1, 1, 0)
+attackP.Position = UDim2.new(0, 105, 0, 175)
+attackP.BackgroundColor3 = Color3.new(0, 0, 1)
+attackP.Font = Enum.Font.Arcade
+attackP.TextScaled = true
+
+local punchCorner = Instance.new("UICorner")
+
+punchCorner.CornerRadius = UDim.new(0, 50)
+punchCorner.Parent = attackP
+
+
+local isPlaceholder = false
+
+
+attackP.MouseButton1Click:Connect(function()
+
+
+
+
+if isPlaceholder then
+return
+end
+
+
+
+isPlaceholder = true
+
+
+
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait for the character to load
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Get the Animator inside the Humanoid
+local animator = humanoid:WaitForChild("Animator")
+
+-- Reference to your Animation object
+local animationA4 = Instance.new("Animation")
+animationA4.AnimationId = "rbxassetid://135557283152371"
+
+-- Load the animation
+local animationTrackA4 = animator:LoadAnimation(animationA4)
+
+-- Play the animation
+animationTrackA4:Play()
+
+
+
+
+
+
+
+
+
+
+
+
+task.wait(3)
+
+
+isPlaceholder = false
+
+
+
+
+end)
