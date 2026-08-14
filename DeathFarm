@@ -5,33 +5,27 @@ end
 
 local queueteleport = missing("function", queue_on_teleport or (syn and syn.queue_on_teleport) or (fluxus and fluxus.queue_on_teleport))
 
-print("[DEBUG] Setting up OnTeleport listener...")
+_G.hasFiredPlayAgain = nil
+
 task.spawn(function()
 	while task.wait() do
 		if game.Players.LocalPlayer then break end
 	end
 	game:GetService("Players").LocalPlayer.OnTeleport:Connect(function()
 		if queueteleport then
-			print("[DEBUG] Teleporting - queueing script load...")
 			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/skkenrgjt/HAHAHAH/refs/heads/main/DeathFarm'))()")
 		end
 	end)
 end)
 
-print("[DEBUG] Waiting for StarterElevator...")
 repeat task.wait() until workspace:FindFirstChild("StarterElevator", true)
-print("[DEBUG] StarterElevator found.")
-
-print("[DEBUG] Waiting for Character & HumanoidRootPart...")
 repeat task.wait() until game.Players.LocalPlayer.Character
 repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 task.wait(2)
-print("[DEBUG] Character ready.")
 
 local cewcew = true
 
 task.spawn(function()
-	print("[DEBUG] Starting Crouch loop...")
 	while cewcew do
 		local remotes = game:GetService("ReplicatedStorage"):FindFirstChild("RemotesFolder")
 		if remotes and remotes:FindFirstChild("Crouch") then
@@ -39,7 +33,6 @@ task.spawn(function()
 		end
 		task.wait()
 	end
-	print("[DEBUG] Crouch loop stopped.")
 end)
 
 local function createNewMovingPath(pos)
@@ -49,55 +42,58 @@ local function createNewMovingPath(pos)
 	return true
 end
 
-print("[DEBUG] Waiting for Room 0...")
-local currentRoom0 = workspace:WaitForChild("CurrentRooms"):WaitForChild("0")
-local keyHitbox = currentRoom0:WaitForChild("Assets"):WaitForChild("KeyObtain"):WaitForChild("Hitbox")
+local currentRooms = workspace:WaitForChild("CurrentRooms", 10)
+local currentRoom0 = currentRooms and currentRooms:WaitForChild("0", 10)
 
-print("[DEBUG] Teleporting to Key...")
-repeat 
-	local keyPrompt = currentRoom0:FindFirstChild("KeyObtain", true) and currentRoom0:FindFirstChild("KeyObtain", true):FindFirstChild("ModulePrompt")
-	createNewMovingPath(keyHitbox.Position + Vector3.new(0, 0, 5))
-	if keyPrompt and keyPrompt:IsDescendantOf(workspace) then
-		fireproximityprompt(keyPrompt)
-	end
-	task.wait(0.05)
-until game.Players.LocalPlayer.Character:FindFirstChild("Key")
-print("[DEBUG] Key obtained!")
+if currentRoom0 then
+	local keyHitbox = currentRoom0:WaitForChild("Assets", 10):WaitForChild("KeyObtain", 10):WaitForChild("Hitbox", 10)
 
-local roomExit = currentRoom0:WaitForChild("RoomExit")
-
-print("[DEBUG] Unlocking Door & starting continuous TP loop...")
-
-local doorLooping = true
-
-task.spawn(function()
-	while doorLooping do
-		local doorPrompt = currentRoom0:FindFirstChild("UnlockPrompt", true)
-		createNewMovingPath(roomExit.Position + Vector3.new(0, 0, 5))
-		
-		if doorPrompt and doorPrompt:IsDescendantOf(workspace) then
-			fireproximityprompt(doorPrompt)
+	local keyTimeout = tick()
+	repeat 
+		local keyPrompt = currentRoom0:FindFirstChild("KeyObtain", true) and currentRoom0:FindFirstChild("KeyObtain", true):FindFirstChild("ModulePrompt")
+		if keyHitbox then
+			createNewMovingPath(keyHitbox.Position + Vector3.new(0, 0, 5))
+		end
+		if keyPrompt and keyPrompt:IsDescendantOf(workspace) then
+			fireproximityprompt(keyPrompt)
 		end
 		task.wait(0.05)
-	end
-end)
+	until game.Players.LocalPlayer.Character:FindFirstChild("Key") or (tick() - keyTimeout > 15)
 
-cewcew = false
+	local roomExit = currentRoom0:WaitForChild("RoomExit", 10)
+	local doorLooping = true
 
-print("[DEBUG] Waiting 8 seconds before sending PlayAgain...")
-task.wait(8)
+	task.spawn(function()
+		while doorLooping do
+			local doorPrompt = currentRoom0:FindFirstChild("UnlockPrompt", true)
+			if roomExit then
+				createNewMovingPath(roomExit.Position + Vector3.new(0, 0, 5))
+			end
+			
+			if doorPrompt and doorPrompt:IsDescendantOf(workspace) then
+				fireproximityprompt(doorPrompt)
+			end
+			task.wait(0.05)
+		end
+	end)
 
-doorLooping = false
+	cewcew = false
+	task.wait(8)
+	doorLooping = false
+end
 
-local remotesFolder = game:GetService("ReplicatedStorage"):WaitForChild("RemotesFolder", 5)
+local remotesFolder = game:GetService("ReplicatedStorage"):WaitForChild("RemotesFolder", 10)
+local playAgainRemote = remotesFolder and remotesFolder:WaitForChild("PlayAgain", 10)
 
-if remotesFolder then
-	local playAgainRemote = remotesFolder:WaitForChild("PlayAgain", 5)
-	
-	if playAgainRemote and not _G.hasFiredPlayAgain then
-		_G.hasFiredPlayAgain = true
-		print("[DEBUG] Found PlayAgain remote. Firing single time...")
-		playAgainRemote:FireServer()
-		print("[DEBUG] Finished firing PlayAgain remote.")
-	end
+if playAgainRemote and not _G.hasFiredPlayAgain then
+	_G.hasFiredPlayAgain = true
+	task.spawn(function()
+		print("I am a loser")
+		while true do
+			pcall(function()
+				playAgainRemote:FireServer()
+			end)
+			task.wait(10) 
+		end
+	end)
 end
