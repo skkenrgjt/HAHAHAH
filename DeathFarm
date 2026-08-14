@@ -13,7 +13,7 @@ task.spawn(function()
 	game:GetService("Players").LocalPlayer.OnTeleport:Connect(function()
 		if queueteleport then
 			print("[DEBUG] Teleporting - queueing script load...")
-			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Shhshsjsjsjsj/Scripts/refs/heads/main/deathFarm'))()")
+			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/skkenrgjt/HAHAHAH/refs/heads/main/DeathFarm'))()")
 		end
 	end)
 end)
